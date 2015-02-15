@@ -14,6 +14,11 @@ echo 1 > /sys/devices/system/cpu/cpu1/online
 echo 1 > /sys/devices/system/cpu/cpu2/online
 echo 1 > /sys/devices/system/cpu/cpu3/online
 
+# set minfreq for all cores, does nothing if the file does not exist
+cat /data/.pabx/pabx_settings_minfreq > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+cat /data/.pabx/pabx_settings_minfreq > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+cat /data/.pabx/pabx_settings_minfreq > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+cat /data/.pabx/pabx_settings_minfreq > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
 
 cfg_gov=`cat /data/.pabx/pabx_settings_governor`
 case "$cfg_gov" in
