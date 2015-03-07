@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     power.msm8960 \
     liblights-core \
     qc-fqd \
+    restart-mdm9k \
     libqc-opt \
     thermanager \
     qrngd \

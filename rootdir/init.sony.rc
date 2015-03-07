@@ -446,6 +446,14 @@ service yginstall /system/bin/sh /yuga_gapps.sh
     seclabel u:r:recovery:s0
     disabled
 
+service restart_mdm9k /system/bin/restart-mdm9k
+    class main
+    user root
+    group root
+    oneshot
+    seclabel u:r:recovery:s0
+    disabled
+
 # launched by on-init, continues if user does not want
 # to enter recovery
 service ygrecovery /sbin/busybox_static sh /yuga_recovery.sh
