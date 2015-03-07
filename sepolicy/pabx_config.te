@@ -4,3 +4,6 @@ allow system_app pabx_config:dir rw_dir_perms;
 
 # allow restart of yuga reconf via properties service
 allow system_app ctl_yuga_reconf_prop:property_service set;
+
+# settings may reboot mdm9k
+allow system_app ctl_restart_mdm9k_prop:property_service set;
