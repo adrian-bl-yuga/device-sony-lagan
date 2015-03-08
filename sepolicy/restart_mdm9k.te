@@ -1,0 +1,12 @@
+type restart_mdm9k, domain;
+type restart_mdm9k_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(restart_mdm9k)
+
+# needs privileges on /dev/mdm
+allow restart_mdm9k radio_device:chr_file { open read ioctl };
+
+# allow starting kickstart
+unix_socket_connect(restart_mdm9k, property, init)
+allow restart_mdm9k ctl_default_prop:property_service set;

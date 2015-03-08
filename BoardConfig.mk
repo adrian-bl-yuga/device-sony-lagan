@@ -113,6 +113,7 @@ BOARD_SEPOLICY_UNION += \
        qcfqd.te \
        tad_static.te \
        taimport.te \
-       ta_qmi_client.te
+       ta_qmi_client.te \
+       restart_mdm9k.te
 
 BOARD_CHARGER_ENABLE_SUSPEND := true

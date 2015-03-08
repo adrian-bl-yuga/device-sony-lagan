@@ -419,6 +419,13 @@ service yuga_reconf /system/bin/sh /yuga_reconf.sh
     seclabel u:r:yuga_service:s0
     oneshot
 
+service restart_mdm9k /system/bin/restart-mdm9k
+    class main
+    user root
+    group radio
+    oneshot
+    disabled
+
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/bugmailer.sh -v
     class main
@@ -439,14 +446,6 @@ service thermanager /system/bin/thermanager /system/etc/thermanager-conf.xml
     group root
 
 service yginstall /system/bin/sh /yuga_gapps.sh
-    class main
-    user root
-    group root
-    oneshot
-    seclabel u:r:recovery:s0
-    disabled
-
-service restart_mdm9k /system/bin/restart-mdm9k
     class main
     user root
     group root
