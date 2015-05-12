@@ -268,8 +268,8 @@ on post-fs-data
 
     # start taimport to readout the mac addr
     wait /dev/socket/tad 5
-    # hack: sleep 1 second to let tad_static finish startup
-    wait /dev/does_not_exist 1
+    # hack: sleep 2 second to let tad_static finish startup
+    wait /dev/does_not_exist 2
     start taimport
 
     # we can now start all qmuxd related services
